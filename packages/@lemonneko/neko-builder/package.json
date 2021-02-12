@@ -1,7 +1,17 @@
 {
   "name": "@lemonneko/neko-builder",
-  "version": "0.1.1-snapshot.1",
+  "version": "0.1.2-snapshot.1",
   "description": "Build system for Java",
+  "keywords": [
+    "cli",
+    "build system",
+    "Java",
+    "LemonNeko"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LemonNekoGH/neko-builder"
+  },
   "main": "index.js",
   "author": "lemon_neko",
   "license": "MIT",
@@ -26,5 +36,7 @@
   "bin": {
     "neko-builder": "bin/neko-builder.js"
   },
-  "scripts": {}
+  "scripts": {
+    "build": "rimraf lib && tsc && node build.js"
+  }
 }
