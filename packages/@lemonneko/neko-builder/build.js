@@ -4,7 +4,7 @@ const fs = require("fs")
 
 async function main() {
     cp.exec(`cd ../../.. && git rev-list HEAD --count`, (error, stdout) => {
-        const versionNumber = stdout.trim()
+        const versionNumber = parseInt(stdout.trim()) + 1
         cp.exec(`cd ../../.. && git branch --show-current`, (error1, stdout1) => {
             const branch = stdout1.trim()
             if (branch === 'master' || branch === 'main') {

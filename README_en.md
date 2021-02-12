@@ -3,6 +3,8 @@
 
 I don't like Gradle, it's too slow, I need a new build system for Java.
 
+Please do not use snapshot version.
+
 ### Index of Projects
 - neko-builder
 - neko-builder-intellij-plugin
