@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import {ConfigReader} from "../src/config";
-
+const {ConfigReader} = require("../lib/config");
 const program = require('commander')
 const packageJson = require('../package.json')
 
