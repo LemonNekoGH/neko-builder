@@ -22,6 +22,7 @@ module.exports = {
   ignorePatterns: [
     'node_modules',
     'lib',
-    'test'
+    'test',
+    'build.js'
   ]
 }

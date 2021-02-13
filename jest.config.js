@@ -1,6 +1,7 @@
 module.exports = {
   roots: [
-    '<rootDir>/test'
+    'packages/@lemonneko/neko-builder/test'
+    // 'packages/@lemonneko/neko-builder/test'
   ],
   testRegex: 'test/(.+)\\.test\\.(jsx?|tsx?)$',
   transform: {
