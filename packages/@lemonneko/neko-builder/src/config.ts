@@ -4,6 +4,7 @@ import { Dependency } from './dependency'
 import { ResolveDependenciesTask, Task } from './task'
 import { Repository } from './repository'
 import { IOException } from './exceptions'
+import { Plugin } from './plugin'
 
 export interface Project {
     name: string
@@ -33,11 +34,16 @@ export class DefaultProject implements Project {
       this.init()
     }
 
-    private init () {
+    private init (): void {
       this.tasks.push(new ResolveDependenciesTask())
       this.tasks.forEach((task) => {
         task.project = this
       })
+    }
+
+    addTask (task: Task): void {
+      task.project = this
+      this.tasks.push(task)
     }
 }
 
@@ -70,6 +76,11 @@ export class BuildFileReader {
     }
     if (obj.repositories && typeof obj.repositories === 'object') {
       project.repositories.push(obj.dependencies)
+    }
+    if (obj.plugins && typeof obj.plugins === 'object') {
+      obj.plugins.forEach((plugin: Plugin) => {
+        plugin.apply(project)
+      })
     }
 
     return project

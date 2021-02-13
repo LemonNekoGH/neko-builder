@@ -1,3 +1,5 @@
-export interface Plugin<T> {
-    apply(t: T)
+import { DefaultProject } from './config'
+
+export interface Plugin {
+    apply(project: DefaultProject): void
 }
