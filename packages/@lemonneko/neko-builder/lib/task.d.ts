@@ -1,6 +1,6 @@
-import { Project } from "./config";
-import { Dependency } from "./dependency";
-import { Repository } from "./repository";
+import { Project } from './config';
+import { Dependency } from './dependency';
+import { Repository } from './repository';
 export declare abstract class Task {
     project?: Project;
     name: string;

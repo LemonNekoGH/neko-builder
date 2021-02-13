@@ -15,5 +15,13 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
-  }
+    'no-useless-constructor': 'off',
+    'no-unused-vars': 'off',
+    'no-redeclare': 'off'
+  },
+  ignorePatterns: [
+    'node_modules',
+    'lib',
+    'test'
+  ]
 }

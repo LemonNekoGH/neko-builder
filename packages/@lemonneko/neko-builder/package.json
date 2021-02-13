@@ -1,6 +1,6 @@
 {
   "name": "@lemonneko/neko-builder",
-  "version": "0.1.7-snapshot.1",
+  "version": "0.1.8-snapshot.1",
   "description": "Build system for Java",
   "keywords": [
     "cli",
@@ -43,7 +43,9 @@
     "neko-builder": "bin/neko-builder.js"
   },
   "scripts": {
-    "build": "rimraf lib && tsc && node build.js",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint --fix",
+    "build": "yarn run lint && yarn run test && rimraf lib && tsc && node build.js",
     "test": "jest"
   }
 }

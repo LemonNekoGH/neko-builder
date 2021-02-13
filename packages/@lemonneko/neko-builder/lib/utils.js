@@ -17,7 +17,7 @@ var DependencyUtil = /** @class */ (function () {
         return baseName;
     };
     DependencyUtil.getLocalCacheBaseName = function (dependency) {
-        var baseName = process.env.HOME + path.sep;
+        var baseName = process.env.HOME + path.sep + '.neko-builder/caches/';
         baseName += dependency.group.replace('.', path.sep) + path.sep;
         baseName += dependency.name + path.sep;
         baseName += dependency.version + path.sep;

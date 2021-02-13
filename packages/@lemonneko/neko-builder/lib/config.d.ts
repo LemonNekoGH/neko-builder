@@ -1,6 +1,6 @@
-import { Dependency } from "./dependency";
-import { Task } from "./task";
-import { Repository } from "./repository";
+import { Dependency } from './dependency';
+import { Task } from './task';
+import { Repository } from './repository';
 export interface Project {
     name: string;
     version: string;

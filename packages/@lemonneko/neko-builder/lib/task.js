@@ -31,7 +31,7 @@ var ResolveDependenciesTask = /** @class */ (function (_super) {
             if (!_this.project) {
                 throw Error('project is undefined.');
             }
-            if (_this.project.repositories.length == 0) {
+            if (_this.project.repositories.length === 0) {
                 throw Error('please define repositories to search artifact');
             }
             _this.project.dependencies.forEach(function (dependency) {
@@ -69,6 +69,6 @@ function task(name, action) {
             return _this;
         }
         return class_1;
-    }(Task));
+    }(Task))();
 }
 exports.task = task;
