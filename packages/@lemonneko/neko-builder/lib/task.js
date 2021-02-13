@@ -35,11 +35,25 @@ var ResolveDependenciesTask = /** @class */ (function (_super) {
                 throw Error('please define repositories to search artifact');
             }
             _this.project.dependencies.forEach(function (dependency) {
-                console.log(dependency);
+                for (var index in _this.project.repositories) {
+                    var repo = _this.project.repositories[index];
+                    if (_this.downloadDependencyFromRepo(dependency, repo)) {
+                        break;
+                    }
+                }
             });
         };
         return _this;
     }
+    /**
+     * Download dependency file to cache dir
+     * @param dependency
+     * @param repo
+     * @return boolean Download success full
+     */
+    ResolveDependenciesTask.prototype.downloadDependencyFromRepo = function (dependency, repo) {
+        return false;
+    };
     return ResolveDependenciesTask;
 }(Task));
 exports.ResolveDependenciesTask = ResolveDependenciesTask;

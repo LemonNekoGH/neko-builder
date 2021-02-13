@@ -1,4 +1,7 @@
 import {Project} from "./config";
+import {Dependency} from "./dependency";
+import {Repository} from "./repository";
+import axios from "axios";
 
 export abstract class Task {
     project?: Project
@@ -22,8 +25,23 @@ export class ResolveDependenciesTask extends Task {
             throw Error('please define repositories to search artifact')
         }
         this.project.dependencies.forEach((dependency) => {
-            console.log(dependency)
+            for (let index in this.project.repositories) {
+                const repo = this.project.repositories[index]
+                if (this.downloadDependencyFromRepo(dependency, repo)) {
+                    break
+                }
+            }
         })
+    }
+
+    /**
+     * Download dependency file to cache dir
+     * @param dependency
+     * @param repo
+     * @return boolean Download success full
+     */
+    downloadDependencyFromRepo(dependency: Dependency, repo: Repository): boolean {
+        return false
     }
 }
 
