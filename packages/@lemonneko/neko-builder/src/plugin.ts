@@ -1,3 +1,3 @@
 export interface Plugin<T> {
-    apply()
+    apply(t: T)
 }

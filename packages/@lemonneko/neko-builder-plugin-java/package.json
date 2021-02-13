@@ -1,0 +1,9 @@
+{
+  "name": "neko-builder-plugin-java",
+  "version": "0.1.9-snapshot.1",
+  "author": "lemon_neko",
+  "license": "MIT",
+  "dependencies": {
+    "@lemonneko/neko-builder": "^0.1.9-snapshot.1"
+  }
+}

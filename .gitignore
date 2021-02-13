@@ -2,3 +2,5 @@
 node_modules/
 
 package.json.bak
+
+packages/@lemonneko/neko-builder/lib

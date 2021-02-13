@@ -2,5 +2,8 @@
   "private": true,
   "workspaces": [
     "packages/@lemonneko/*"
-  ]
+  ],
+  "scripts": {
+    "build": "node build.js"
+  }
 }
